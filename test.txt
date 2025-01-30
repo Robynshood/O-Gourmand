@@ -1,0 +1,78 @@
+1 :
+    background: repeating-linear-gradient(90deg, transparent, #000000);
+    background-size: 1em 1em;
+    background-color: #0e0d0d;
+    opacity: 1;
+
+2:
+    background: radial-gradient(#000000 15%, transparent 16%), linear-gradient(45deg, transparent 49%, #000000 49% 51%, transparent 51%), linear-gradient(-45deg, transparent 49%, #000000 49% 51%, transparent 51%);
+    background-size: 1em 1em;
+    background-color: #0e0d0d;
+    opacity: 1;
+
+3: 
+    background: linear-gradient(0deg, transparent 45%, #000000 45%, #000000 55%, transparent 55%, transparent 20%, #000000 20%, #000000 30%,transparent 30%);
+        background-size: 1em 1em;
+        background-color: #0e0d0d;
+        opacity: 1;
+
+4:
+    background: repeating-radial-gradient(circle,#1e1d1d, transparent 20%);
+        background-size: 2em 2em;
+        background-color: #100f0f;
+        opacity: 1;
+
+5:
+    background: radial-gradient(circle at top left,transparent 9%, #1e1d1d 10% ,#1e1d1d 15% , transparent 16%) , radial-gradient(circle at bottom left,transparent 9%, #1e1d1d 10% ,#1e1d1d 15% , transparent 16%), radial-gradient(circle at top right ,transparent 9%, #1e1d1d 10% ,#1e1d1d 15% , transparent 16%) , radial-gradient(circle at bottom right,transparent 9%, #1e1d1d 10% ,#1e1d1d 15% , transparent 16%),radial-gradient(circle, transparent 25%, #100f0f  26%),linear-gradient(0deg, transparent 44%, #1e1d1d 45%, #1e1d1d 55%, transparent 56%), linear-gradient(90deg, transparent 44%, #1e1d1d 45%, #1e1d1d 55%, transparent 56%);
+        background-size: 1em 1em;
+        background-color: #100f0f;
+        opacity: 1;
+
+burger1:
+    .price {
+    position: absolute;
+    bottom: 10px; /* Positionner le prix en bas */
+    right: 10px; /* Positionner le prix à droite */
+    width: 75px;
+    height: 75px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
+}
+
+burger 2 :
+.price {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 15px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px; /* Bords arrondis */
+    transform: rotate(15deg); /* Incliner l'étiquette */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    text-align: center;
+    white-space: nowrap; /* Pour éviter que le texte ne soit coupé */
+}
+
+ligne entre chaque image :
+.menu-container::before {
+    content: "";
+    position: absolute;
+    top: 50%; /* Place la barre au centre du conteneur */
+    left: 10px; /* Centrer horizontalement */
+    width: 90%;
+    height: 2px;
+    background-color: #ffc400; /* Couleur de la barre */
+    z-index: -1; /* Derrière les éléments du menu */
+    transform: translateY(-50%); /* Centrer verticalement la barre */
+}
