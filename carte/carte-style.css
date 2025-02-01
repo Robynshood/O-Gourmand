@@ -282,9 +282,15 @@ h3 {
 
     nav ul {
         flex-direction: row;
+        flex-wrap: wrap;
         width: 90%;
+        justify-content: center;
         text-align: center;
         margin: auto;
+    }
+
+    .hero{
+        background-size: 20%;
     }
 
     .hero h1 {
@@ -337,7 +343,7 @@ h3 {
         transition: all 0.3s ease;
         position: absolute; /* Permet au titre de sortir du conteneur */
        /* Décale le titre vers le haut */
-        left: 200px; /* Aligne le titre à gauche du conteneur */
+        left: 180px; /* Aligne le titre à gauche du conteneur */
         width: 50%; /* Assure que le titre occupe toute la largeur de la boîte */
         text-align: center; /* Centrer le texte si nécessaire */
     }
