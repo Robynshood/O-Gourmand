@@ -177,13 +177,15 @@ nav ul li:hover a{
     justify-content: flex-start; /* Aligne les éléments à gauche */
     position: relative; /* Permet de positionner la barre */
 }
-
-.menu-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 250px; /* Limite la largeur des éléments */
+/* Styles pour les écrans de 1024px et plus (desktop) */
+@media (min-width: 1024px) {
+    .menu-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
+
 
 .menu-item h1 {
     font-size: 28px; /* Taille du texte (réduite pour mieux s'adapter) */
@@ -195,6 +197,35 @@ nav ul li:hover a{
     border-radius: 5px; /* Bordure arrondie pour un effet plus doux */
     transition: all 0.3s ease; /* Transition douce pour les effets de survol */
 }
+
+/* Tablettes (entre 600px et 1024px) */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .menu-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .menu-item {
+        max-width: 80%;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 250px; /* Limite la largeur des éléments */
+}
+
+
 
 .sous-titre {
     display: flex; /* Permet de placer les traits et le texte sur une même ligne */
@@ -237,4 +268,102 @@ h3 {
     margin: auto;
     margin-top: 20px;
 
+}
+
+
+@media (max-width: 600px) {
+    body {
+        font-size: 12px; /* Texte plus petit */
+    }
+
+    header {
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: row;
+        width: 90%;
+        text-align: center;
+        margin: auto;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* Réduction du titre */
+    }
+
+    .menu-container {
+        display: flex;
+        flex-direction: column; /* Mise en colonne */
+        gap: 0;
+        width: 100%;
+    }
+
+    .menu-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* Alignement des éléments sur la même ligne */
+        justify-content: flex-start; /* Garder l'image à gauche et le titre à droite */
+        text-align: left;
+        margin-bottom: 10px; /* Espacement entre les éléments */
+        padding: 10px;
+
+    }
+
+    .menu-item img {
+        width: 150px; /* Petite image */
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .menu-image::before {
+        content: ''; /* Nécessaire pour afficher le pseudo-élément */
+        position: absolute;
+        width: 66%;
+        height: 97%;
+        background-color: #ffc400; /* Ombre noire avec une opacité de 0.4 */
+        clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); /* Même forme diagonale */
+        z-index: -1; /* Placer l'ombre derrière l'image */
+        transform: translate(10px, 10px); /* Décaler légèrement l'ombre pour un effet de profondeur */
+    }
+
+    .menu-item h1 {
+        align-items: center;
+        font-size: 28px;
+        color: #f8f8f8;
+        text-transform: capitalize;
+        text-decoration: underline;
+        padding: 10px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        position: absolute; /* Permet au titre de sortir du conteneur */
+       /* Décale le titre vers le haut */
+        left: 200px; /* Aligne le titre à gauche du conteneur */
+        width: 50%; /* Assure que le titre occupe toute la largeur de la boîte */
+        text-align: center; /* Centrer le texte si nécessaire */
+    }
+    
+    .sous-titre {
+        width: 90%;
+        font-size: 1.7rem;
+        text-align: center;
+    }
+
+    /* Style du prix sur mobile */
+    .price {
+        --f: 10px; /* control the folded part*/
+      --r: 15px; /* control the ribbon shape */
+      --t: 10px; /* the top offset */
+      font-size: 15px;
+      position: absolute;
+      color: #000000;
+      inset: var(--t) calc(-1*var(--f)) auto auto;
+      padding: 0 10px var(--f) calc(10px + var(--r));
+      margin-right: 80px;
+      clip-path: 
+        polygon(0 0,100% 0,100% calc(100% - var(--f)),calc(100% - var(--f)) 100%,
+          calc(100% - var(--f)) calc(100% - var(--f)),0 calc(100% - var(--f)),
+          var(--r) calc(50% - var(--f)/2));
+      background: #ffc400;
+      transition: opacity 0.3s ease;
+    }
 }
